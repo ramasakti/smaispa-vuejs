@@ -1,0 +1,296 @@
+
+<!doctype html>
+<html class="no-js" lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="SMA Islam Parlaungan" content="Berkarya, Berkarakter, Berakhlakul Karimah">
+    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+    <!-- PWA  -->
+    <meta name="theme-color" content="#FFFFFF"/>
+    <link rel="apple-touch-icon" href="https://smaispa.sch.id/img/logo.png">
+    <link rel="manifest" href="manifest.json">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.15.24/dist/css/uikit.min.css" />
+    
+    <link rel="shortcut icon" type="image/png" href="/adminlte/images/icon/favicon.ico">
+    <link rel="stylesheet" href="/adminlte/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/adminlte/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/adminlte/css/themify-icons.css">
+    <link rel="stylesheet" href="/adminlte/css/metisMenu.css">
+    <link rel="stylesheet" href="/adminlte/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/adminlte/css/slicknav.min.css">
+    <!-- amchart css -->
+    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
+    <!-- others css -->
+    <link rel="stylesheet" href="/adminlte/css/typography.css">
+    <link rel="stylesheet" href="/adminlte/css/default-css.css">
+    <link rel="stylesheet" href="/adminlte/css/styles.css">
+    <link rel="stylesheet" href="/adminlte/css/responsive.css">
+    <!-- modernizr css -->
+    <script src="/adminlte/js/vendor/modernizr-2.8.3.min.js"></script>
+    
+    <script src="https://cdn.tiny.cloud/1/zgg0gxpkj4s833bnso32wri5w42hrq17ebnjci64yppegu0j/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+</head>
+
+<body>
+    <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- preloader area start -->
+    <div id="preloader">
+        <div class="loader"></div>
+    </div>
+    <!-- preloader area end -->
+    <!-- page container area start -->
+    <div class="page-container">
+        <!-- sidebar menu area start -->
+        <div class="sidebar-menu">
+            <div class="sidebar-header">
+                <div class="logo">
+                    <a href="#"><img src="/img/logo.png" class="uk-border-circle" alt="logo"></a>
+                </div>
+            </div>
+            <div class="main-menu">
+                <div class="menu-inner">
+                    <nav>
+                        <ul class="metismenu" id="menu">
+                            <li class="active">
+                                <a href="/dashboard">
+                                    <span>Dashboard</span>
+                                </a>
+                                <li class="">
+                                    <a href="/web"><span>Web</span></a>
+                                </li>
+                            </li>
+                            <li class="">
+                                <a href="/user"><span>User</span></a>
+                            </li>
+                            <li class="">
+                                <a href="javascript:void(0)" aria-expanded="true"><span>Sekolah</span></a>
+                                <ul class="collapse">
+                                    <li><a href="/sekolah"><span>Harian & Libur</span></a></li>
+                                    <li><a href="/rapat"><span>Rapat</span></a></li>
+                                    <li><a href="/arsip"><span>Administrasi Surat</span></a></li>
+                                    <li><a href="#"><span>E Library</span></a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="javascript:void(0)" aria-expanded="true"><span>Siswa</span></a>
+                                <ul class="collapse">
+                                    <li><a href="/siswa">Data Siswa</a></li>
+                                    <li><a href="/absen">Absen Siswa</a></li>
+                                    <li><a href="/absen/rekap">Rekap Absen Siswa</a></li>
+                                    <li><a href="/siswa/keuangan">Keuangan Siswa</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="javascript:void(0)" aria-expanded="true"><span>Guru</span></a>
+                                <ul class="collapse">
+                                    <li><a href="/guru">Data Guru</a></li>
+                                    <li><a href="/guru/keuangan?dari=2023-03-15&sampai=2023-04-15">Keuangan Guru</a></li>
+                                </ul>
+                            </li>
+                            <li class="">
+                                <a href="javascript:void(0)" aria-expanded="true"><span>Akademik</span></a>
+                                <ul class="collapse">
+                                    <li><a href="/jadwal">Jadwal Pelajaran</a></li>
+                                    <li><a href="/jurnal">Jurnal Kelas</a></li>
+                                </ul>
+                            </li>                                  
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+        <!-- sidebar menu area end -->
+        <!-- main content area start -->
+        <div class="main-content">
+            <!-- header area start -->
+            <div class="header-area">
+                <div class="row align-items-center">
+                    <!-- nav and search button -->
+                    <div class="col-md-6 col-sm-8 clearfix">
+                        <div class="nav-btn pull-left">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                    </div>
+                    <!-- profile info & task notification -->
+                    <div class="col-md-6 col-sm-4 clearfix">
+                        <ul class="notification-area pull-right">
+                    </div>
+                </div>
+            </div>
+            <!-- header area end -->
+            <!-- page title area start -->
+            <div class="page-title-area">
+                <div class="row align-items-center">
+                    <div class="col-sm-6">
+                        <div class="breadcrumbs-area clearfix">
+                            <h4 class="page-title pull-left">Dashboard</h4>
+                            <ul class="breadcrumbs pull-left">
+                                <li><a href="/">Home</a></li>
+                                <li><span>dashboard</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 clearfix">
+                        <div class="user-profile pull-right">
+                            <img class="avatar user-thumb" src="/adminlte/images/author/avatar.png" alt="avatar">
+                            <h4 class="user-name dropdown-toggle" data-toggle="dropdown">ramasakti27<i class="fa fa-angle-down"></i></h4>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="/profile">Profile</a>
+                                <a class="dropdown-item" href="/logout">Log Out</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- page title area end -->
+            <div class="main-content-inner ">
+                <!-- MAIN CONTENT GOES HERE -->
+                <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match uk-margin-top-small" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <?xml version="1.0" encoding="UTF-8"?>
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="200" height="200" viewBox="0 0 200 200"><rect x="0" y="0" width="200" height="200" fill="#ffffff"/><g transform="scale(9.524)"><g transform="translate(0,0)"><path fill-rule="evenodd" d="M8 0L8 1L9 1L9 0ZM10 0L10 2L8 2L8 5L9 5L9 6L8 6L8 7L9 7L9 6L10 6L10 7L11 7L11 8L8 8L8 9L7 9L7 8L6 8L6 9L7 9L7 10L5 10L5 9L4 9L4 8L0 8L0 9L3 9L3 10L1 10L1 11L0 11L0 12L1 12L1 11L3 11L3 12L2 12L2 13L4 13L4 12L5 12L5 13L8 13L8 14L11 14L11 15L13 15L13 14L12 14L12 13L13 13L13 12L12 12L12 10L14 10L14 11L15 11L15 12L14 12L14 13L16 13L16 14L15 14L15 15L17 15L17 17L19 17L19 18L17 18L17 19L15 19L15 18L14 18L14 16L12 16L12 17L13 17L13 18L12 18L12 20L11 20L11 21L12 21L12 20L13 20L13 18L14 18L14 21L15 21L15 20L16 20L16 21L19 21L19 20L17 20L17 19L19 19L19 18L20 18L20 17L19 17L19 16L21 16L21 15L18 15L18 14L20 14L20 13L18 13L18 14L17 14L17 12L18 12L18 11L17 11L17 12L16 12L16 10L17 10L17 9L18 9L18 10L19 10L19 12L21 12L21 8L20 8L20 10L19 10L19 8L16 8L16 10L14 10L14 8L13 8L13 5L12 5L12 4L13 4L13 3L12 3L12 1L13 1L13 0ZM10 2L10 4L9 4L9 5L11 5L11 4L12 4L12 3L11 3L11 2ZM11 6L11 7L12 7L12 6ZM8 9L8 10L7 10L7 11L6 11L6 12L8 12L8 11L10 11L10 13L12 13L12 12L11 12L11 10L9 10L9 9ZM9 15L9 17L8 17L8 21L10 21L10 20L9 20L9 19L11 19L11 16L10 16L10 15ZM9 17L9 18L10 18L10 17ZM20 19L20 20L21 20L21 19ZM0 0L0 7L7 7L7 0ZM1 1L1 6L6 6L6 1ZM2 2L2 5L5 5L5 2ZM14 0L14 7L21 7L21 0ZM15 1L15 6L20 6L20 1ZM16 2L16 5L19 5L19 2ZM0 14L0 21L7 21L7 14ZM1 15L1 20L6 20L6 15ZM2 16L2 19L5 19L5 16Z" fill="#000000"/></g></g></svg>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body" id="card">
+                            <p class="uk-margin-remove uk-position-top-right"><a href="/profile" class="uk-margin-small-right" uk-icon="user"></a></p>
+                            <div class="uk-panel">
+                                <img class="uk-border-circle uk-align-left uk-margin-small-right uk-margin-small-bottom" width="35%" height="35%" src="img/default-user.jpg">
+                                <h5 class="uk-card-title uk-margin-remove ">Rama Sakti Hafidz FA</h5>
+                                <p class="uk-margin-remove"><span class="uk-margin-small-right" uk-icon="calendar"></span>Surabaya, 2002-09-27</p>
+                                <p class="uk-margin-remove"><span class="uk-margin-small-right" uk-icon="location"></span>Kp. Baru Tb. Sumur Waru Sidoarjo</p>
+                                <p class="uk-margin-remove"><span class="uk-margin-small-right" uk-icon="whatsapp"></span>6285157177034</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">Siswa</h3>
+                            <p>Jumlah siswa saat ini 113 siswa</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">Guru</h3>
+                            <p>Jumlah guru dan staf saat ini 9 orang</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body">
+                            <h3 class="uk-card-title">Kelas</h3>
+                            <p>Jumlah kelas saat ini 6 kelas</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="uk-child-width-1-2@m uk-grid-small uk-grid-match" uk-grid>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-padding-small">
+                            <h3 class="uk-card-title">Diagram Presensi Siswa Hari Ini</h3>
+                            <canvas class="uk-height-max-medium" id="absenChart"></canvas>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="uk-card uk-card-default uk-card-body uk-padding-small">
+                            <h3 class="uk-card-title">Grafik Keterlambatan Siswa Minggu Ini</h3>
+                            <canvas class="uk-height-max-medium" id="terlambatChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- main content area end -->
+        <!-- footer area start-->
+        <footer>
+            <div class="footer-area">
+                <p>Dibuat dan Dikembangkan oleh <b>Staf Data, Informasi, Pengembangan, dan Infrastruktur Teknologi - SMA Islam Parlaungan</b></p>
+            </div>
+        </footer>
+        <!-- footer area end-->
+    </div>
+    <!-- page container area end -->
+    
+    <script type="text/javascript">
+        //Data Diagram
+        const diagramAbsen = [0,0,4,3,106]
+        const rangeTanggalGrafik = ["2023-03-18","2023-03-16","2023-03-15","2023-03-14","2023-03-13","2023-03-11","2023-03-10"]
+        const grafikMingguan = [49,7,16,32,10,21,26]
+    </script>
+    <!-- <script type="text/javascript" src="/js/app.js"></script> -->
+    <script>
+        //QR Code
+        const svg = document.getElementsByTagName('svg')[0]
+        svg.setAttribute('class', 'uk-align-center')
+        svg.setAttribute('height', '40%')
+        svg.setAttribute('width', '40%')
+    </script>
+    <script>
+        //Print Card
+        function printDiv() {
+            const card = document.getElementById('card').innerHTML
+            card.print()
+        }
+    </script>
+
+    <!-- Vue JS Start -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/vue-router@3/dist/vue-router.js"></script>
+
+    <!-- Vue JS End -->
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.24/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.15.24/dist/js/uikit-icons.min.js"></script>
+
+    <!-- jquery latest version -->
+    <script src="/adminlte/js/vendor/jquery-2.2.4.min.js"></script>
+    <!-- bootstrap 4 js -->
+    <script src="/adminlte/js/popper.min.js"></script>
+    <script src="/adminlte/js/bootstrap.min.js"></script>
+    <script src="/adminlte/js/owl.carousel.min.js"></script>
+    <script src="/adminlte/js/metisMenu.min.js"></script>
+    <script src="/adminlte/js/jquery.slimscroll.min.js"></script>
+    <script src="/adminlte/js/jquery.slicknav.min.js"></script>
+
+    <!-- start chart js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+    <!-- start highcharts js -->
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <!-- start zingchart js -->
+    <script src="https://cdn.zingchart.com/zingchart.min.js"></script>
+    <script>
+        zingchart.MODULESDIR = "https://cdn.zingchart.com/modules/";
+        ZC.LICENSE = ["569d52cefae586f634c54f86dc99e6a9", "ee6b7db5b51705a13dc2339db3edaf6d"];
+    </script>
+    <!-- all line chart activation -->
+    <script src="/adminlte/js/line-chart.js"></script>
+    <!-- all pie chart -->
+    <script src="/adminlte/js/pie-chart.js"></script>
+    <!-- others plugins -->
+    <script src="/adminlte/js/plugins.js"></script>
+    <script src="/adminlte/js/scripts.js"></script>
+    
+    <script src="sw.js"></script>
+    <script>
+        if (!navigator.serviceWorker.controller) {
+            navigator.serviceWorker.register("/sw.js").then(function (reg) {
+                console.log("Service worker has been registered for scope: " + reg.scope);
+            });
+        }
+    </script>
+</body>
+</html>
