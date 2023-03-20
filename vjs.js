@@ -1,23 +1,11 @@
-const index = {
-    template: `<h1>Index</h1>`
-}
-
-const kontak = {
-    template: `<h1>Kontak</h1>`
-}
-
-const item = {
-    template: `<h1>Item</h1>`
-}
-
 const routes = [
     {
-        path: '/',
-        component: index
+        path: '/dashboard',
+        component: dashboard,
     },
     {
-        path: '/kontak',
-        component: kontak
+        path: '/web',
+        component: web
     },
     {
         path: '/item',
@@ -30,7 +18,7 @@ const router = new VueRouter({
 })
 
 const data = {
-
+    url: window.location.hash,
 }
 
 const vjs = new Vue({
@@ -38,6 +26,8 @@ const vjs = new Vue({
     router,
     data,
     methods: {
-
+        leftnav() {
+            document.getElementsByClassName('nav-btn pull-left')[0].click()
+        }
     }
 })
